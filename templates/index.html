@@ -1,0 +1,43 @@
+<head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- {% block styles %} -->
+        <!-- {{ bootstrap.load_css() }}
+    {% endblock %} -->
+
+    <title>Your page title</title>
+    {% endblock %}
+</head>
+{% block content %}
+    {% if rating %}
+    <form method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" name=review placeholder="Add review here">
+            </div>
+            <div class="col">
+                <input type=submit value="Predict Score" class="btn btn-primary mb-2"></button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-xl-2"></div>
+        <div class="col-md-8 col-lg-8 col-xl-8"><h3>Score: {{rating}}</h3></div>
+        
+    </div>
+    {% else %}
+    <form method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" name=review placeholder="Add review here">
+            </div>
+            <div class="col">
+                <input type=submit value="Predict Score" class="btn btn-primary mb-2"></button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+{% endblock content %}
